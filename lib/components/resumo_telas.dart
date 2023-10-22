@@ -4,7 +4,7 @@ import '../models/transaction.dart';
 class SummaryScreen extends StatelessWidget {
   final List<Transaction> transactions;
 
-  SummaryScreen(this.transactions);
+  const SummaryScreen(this.transactions, {Key? key}) : super(key: key);
 
   double get totalExpenses => _calculateTotalExpenses(transactions);
 
@@ -20,19 +20,19 @@ class SummaryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resumo Total'),
+        title: const Text('Resumo Total'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Total de Despesas:',
               style: TextStyle(fontSize: 20),
             ),
             Text(
               'R\$ ${totalExpenses.toStringAsFixed(2)}', // Formata para duas casas decimais
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
