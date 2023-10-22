@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'components/transaction_list.dart';
 import 'components/chart.dart';
+import 'components/resumo_telas.dart';
 import 'models/transaction.dart';
 
 main() => runApp(ExpensesApp());
@@ -102,6 +103,14 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.add),
             onPressed: () => _openTransactionFormModal(context),
           ),
+          IconButton(
+            icon: Icon(Icons.pie_chart),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (ctx) => SummaryScreen()),
+              );
+            },
+          )
         ],
       ),
       body: SingleChildScrollView(
