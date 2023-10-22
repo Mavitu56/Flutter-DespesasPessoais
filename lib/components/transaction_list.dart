@@ -9,6 +9,14 @@ class TransactionList extends StatelessWidget {
   const TransactionList(this.transactions, this.onRemove, {Key? key})
       : super(key: key);
 
+  double _calculateTotalExpenses(List<Transaction> transactions) {
+    double total = 0.0;
+    for (var transaction in transactions) {
+      total += transaction.value;
+    }
+    return total;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
