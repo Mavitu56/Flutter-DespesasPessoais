@@ -6,9 +6,9 @@ class SummaryScreen extends StatelessWidget {
 
   const SummaryScreen(this.transactions, {Key? key}) : super(key: key);
 
-  double get totalExpenses => _calculateTotalExpenses(transactions);
+  double get totalExpenses => calculateTotalExpenses(transactions);
 
-  double _calculateTotalExpenses(List<Transaction> transactions) {
+  double calculateTotalExpenses(List<Transaction> transactions) {
     double total = 0.0;
     for (var transaction in transactions) {
       total += transaction.value;
